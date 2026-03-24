@@ -36,6 +36,9 @@
   --text-secondary: #A1A1AA;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* BASE STYLES */
 
 body {
