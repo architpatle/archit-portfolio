@@ -26,8 +26,8 @@ function Logo() {
         userSelect:     "none",
       }}
     >
-      <span style={{ ...FONT, color: theme.colors.textPrimary }}>ARCHIT</span>
-      <span style={{ ...FONT, color: theme.colors.lime }}>.PATLE</span>
+      <span style={{ ...FONT, color: theme.colors.lime }}>ARCHIT</span>
+      <span style={{ ...FONT, color: theme.colors.textPrimary }}>.PATLE</span>
     </a>
   );
 }

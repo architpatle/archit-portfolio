@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- DESIGN TOKENS ---------- */
+
+:root {
+  /* LIGHT THEME */
+  --bg: #FFFFFF;
+  --surface: #F8F8F8;
+  --border: rgba(0, 0, 0, 0.08);
+
+  --text-primary: #111111;
+  --text-secondary: #525252;
+
+  --accent: #4F46E5;
+  --accent-hover: #6366F1;
+
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-lg: 16px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* DARK THEME */
+
+[data-theme="dark"] {
+  --bg: #0E0E10;
+  --surface: #16161A;
+  --border: rgba(255, 255, 255, 0.08);
+
+  --text-primary: #F5F5F5;
+  --text-secondary: #A1A1AA;
+}
+
+/* BASE STYLES */
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+* {
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal),
+              border-color var(--transition-normal);
+}
+
+/* REUSABLE */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: all var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
