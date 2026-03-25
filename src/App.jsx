@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Background from "./components/common/Background";
 import Navbar from "./components/common/Navbar";
 import MobileMenu from "./components/common/MobileMenu";
 import ThemeToggle from "./components/common/ThemeToggle";
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <div className="bg-bg text-primary min-h-screen">
+      <Background />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <ThemeToggle />

@@ -30,7 +30,7 @@ export default function Hero() {
           </div>
 
           {/* MAIN HEADING */}
-          <h1 className="text-5xl md:text-7xl font-heading tracking-tight leading-tight mt-6 mb-6">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-heading tracking-tight leading-tight mt-6 mb-6">
             Hey there, I’m{" "}
             <span className="text-accent">Archit Patle</span>.
           </h1>
@@ -48,7 +48,7 @@ export default function Hero() {
               href="#projects"
               className="px-6 py-3 rounded-lg bg-accent text-white text-sm hover:opacity-90 transition"
             >
-              Explore My Work →
+              Explore My Work 
             </a>
 
             <a
@@ -63,7 +63,7 @@ export default function Hero() {
       </Container>
 
       {/* MARQUEE */}
-      <div className={styles.marqueeWrapper}>
+      {/* <div className={styles.marqueeWrapper}>
         <div className={styles.marquee}>
           {[...skills, ...skills].map((skill, i) => (
             <span key={i} className={styles.marqueeItem}>
@@ -71,7 +71,7 @@ export default function Hero() {
             </span>
           ))}
         </div>
-      </div>
+      </div> */}
 
     </section>
   );
