@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/common/Navbar";
 import MobileMenu from "./components/common/MobileMenu";
 import ThemeToggle from "./components/common/ThemeToggle";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +20,7 @@ function App() {
 
       <main>
         {/* Sections */}
+        <Hero />
       </main>
     </div>
   );

@@ -1,158 +1,77 @@
-import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import Container from "../common/Container";
 import styles from "./Hero.module.css";
 
-// ─── Animation helpers ────────────────────────────────────────────────────────
-const EXPO = [0.16, 1, 0.3, 1];
-
-const fadeUp = (delay = 0) => ({
-  initial:    { opacity: 0, y: 24 },
-  animate:    { opacity: 1, y: 0  },
-  transition: { delay, duration: 0.65, ease: EXPO },
-});
-
-const fadeIn = (delay = 0) => ({
-  initial:    { opacity: 0 },
-  animate:    { opacity: 1 },
-  transition: { delay, duration: 0.5, ease: EXPO },
-});
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
-const STACK = [
-  "React", "Next.js", "Node.js", "TypeScript",
-  "PostgreSQL", "MongoDB", "AWS", "Docker",
-  "Tailwind CSS", "REST APIs", "Git", "Linux",
+const skills = [
+  "React",
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Tailwind",
+  "Bootstrap",
+  "Figma",
+  "UI/UX",
+  "C",
+  "C++",
 ];
 
-const NAV_LINKS = [
-  { label: "Work",    href: "#projects"  },
-  { label: "About",   href: "#about"     },
-  { label: "Skills",  href: "#skills"    },
-  { label: "Contact", href: "#contact"   },
-];
-
-// ─── Top Bar ──────────────────────────────────────────────────────────────────
-function TopBar() {
-  return (
-    <motion.div className={styles.topbar} {...fadeIn(0.1)}>
-      {/* Terminal prompt — left */}
-      <div className={styles.prompt}>
-        <span className={styles.promptArrow}>➜</span>
-        <span className={styles.promptPath}>~/archit-patle</span>
-        <span className={styles.cursor} aria-hidden="true" />
-      </div>
-
-      {/* Nav — right */}
-      <nav className={styles.topNav}>
-        {NAV_LINKS.map((link) => (
-          <a key={link.label} href={link.href} className={styles.topNavLink}>
-            {link.label}
-          </a>
-        ))}
-        <a href="#contact" className={styles.topNavCta}>Hire Me</a>
-      </nav>
-    </motion.div>
-  );
-}
-
-// ─── Headline ─────────────────────────────────────────────────────────────────
-function Headline() {
-  return (
-    <motion.h1 className={styles.headline} {...fadeUp(0.28)}>
-      {/* ARCHIT.PATLE — name line */}
-      <span className={styles.hlName}>
-        <span className={styles.hlArchit}>Archit</span>
-        <span className={styles.hlDot}>.</span>
-        <span className={styles.hlPatle}>Patle</span>
-      </span>
-
-      {/* Builds the WEB. */}
-      <span className={styles.hlRest}>
-        Builds the{" "}
-        <span className={styles.hlWeb}>Web.</span>
-      </span>
-    </motion.h1>
-  );
-}
-
-// ─── Ticker ───────────────────────────────────────────────────────────────────
-function Ticker() {
-  // Duplicate items for seamless infinite loop
-  const items = [...STACK, ...STACK];
-
-  return (
-    <div className={styles.tickerWrap} aria-hidden="true">
-      <div className={styles.tickerTrack}>
-        {items.map((tech, i) => (
-          <span key={i} className={styles.tickItem}>{tech}</span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ─── Main Hero ────────────────────────────────────────────────────────────────
 export default function Hero() {
-  const ref    = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
-    <section id="hero" className={styles.section} ref={ref}>
+    <section className={`relative py-28 md:py-36 overflow-hidden ${styles.hero}`}>
 
-      {/* Backgrounds */}
-      <div className={styles.gridBg}    aria-hidden="true" />
-      <div className={styles.accentLine} aria-hidden="true" />
-      <div className={styles.ghostBg}   aria-hidden="true">AP</div>
+      {/* BACKGROUND GRADIENT */}
+      <div className={styles.gradientBg}></div>
 
-      {/* Top bar with terminal prompt + nav */}
-      <TopBar />
+      <Container>
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
 
-      {/* Main content */}
-      <div className={styles.body}>
+          {/* EYEBROW */}
+          <div className={styles.eyebrow}>
+            Web Developer
+          </div>
 
-        {/* Eyebrow */}
-        <motion.div className={styles.eyebrow} {...fadeUp(0.18)}>
-          <span className={styles.eyebrowLine} />
-          // Introducing
-        </motion.div>
+          {/* MAIN HEADING */}
+          <h1 className="text-5xl md:text-7xl font-heading tracking-tight leading-tight mt-6 mb-6">
+            Hey there, I’m{" "}
+            <span className="text-accent">Archit Patle</span>.
+          </h1>
 
-        {/* Headline */}
-        <Headline />
+          {/* DESCRIPTION */}
+          <p className="text-secondary max-w-xl mb-10 leading-relaxed">
+            I design and develop clean, scalable web interfaces focused on usability,
+            performance, and meaningful user experience.
+          </p>
 
-        {/* Description */}
-        <motion.p className={styles.desc} {...fadeUp(0.4)}>
-          Full Stack Developer crafting{" "}
-          <span className={styles.descEm}>fast</span>,{" "}
-          <span className={styles.descEm}>scalable</span> web
-          experiences — from database architecture to
-          pixel-perfect interfaces. Based in India.{" "}
-          <span className={styles.descEm}>Open to work.</span>
-        </motion.p>
+          {/* CTA */}
+          <div className="flex gap-4 flex-wrap justify-center">
 
-        {/* CTA Buttons — below description */}
-        <motion.div className={styles.ctaRow} {...fadeUp(0.52)}>
-          <motion.a
-            href="#projects"
-            className={styles.btnPrimary}
-            whileTap={{ scale: 0.97 }}
-          >
-            View Work →
-          </motion.a>
-          <motion.a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className={styles.btnSecondary}
-            whileTap={{ scale: 0.97 }}
-          >
-            Resume ↗
-          </motion.a>
-        </motion.div>
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-lg bg-accent text-white text-sm hover:opacity-90 transition"
+            >
+              Explore My Work →
+            </a>
 
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-lg border border-border text-sm hover:border-accent hover:text-accent transition"
+            >
+              Let’s Connect
+            </a>
+
+          </div>
+        </div>
+      </Container>
+
+      {/* MARQUEE */}
+      <div className={styles.marqueeWrapper}>
+        <div className={styles.marquee}>
+          {[...skills, ...skills].map((skill, i) => (
+            <span key={i} className={styles.marqueeItem}>
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
-
-      {/* Bottom scrolling tech stack ticker */}
-      <Ticker />
 
     </section>
   );
