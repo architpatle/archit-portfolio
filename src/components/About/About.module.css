@@ -1,0 +1,8 @@
+span {
+  transition: all 0.2s ease;
+}
+
+span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
