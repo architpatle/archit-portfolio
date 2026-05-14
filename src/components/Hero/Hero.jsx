@@ -86,7 +86,7 @@ export default function Hero() {
               Hey there, I’m
             </span>
 
-            <span className="block text-6xl sm:text-7xl md:text-8xl font-bold text-accent mt-3">
+            <span className="block uppercase text-6xl sm:text-7xl md:text-8xl font-bold text-accent mt-3">
               Archit Patle
             </span>
           </h1>
