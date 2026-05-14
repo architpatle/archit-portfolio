@@ -42,7 +42,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
 
   return (
     <nav
-      className={`sticky top-0 z-30 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full top-0 z-30 bg-bg/80 backdrop-blur-md border-b border-border transition-all duration-300 ${
         scrolled
           ? "bg-bg/80 backdrop-blur-md border-b border-border"
           : "bg-transparent"

@@ -1,74 +1,246 @@
 .hero {
   position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+
+  --orbit1-radius: 360px;
+  --orbit2-radius: 490px;
 }
 
-/* 🔥 SUBTLE ANIMATED GRADIENT */
+/* BACKGROUND GRADIENT */
 
 .gradientBg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(79, 70, 229, 0.15), transparent 40%),
-              radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.12), transparent 40%);
-  animation: moveGradient 10s ease-in-out infinite alternate;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(79, 70, 229, 0.15), transparent 35%),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.02), transparent 60%);
   z-index: 0;
 }
 
-@keyframes moveGradient {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(20px, -20px);
-  }
+/* ORBIT SYSTEM */
+
+.orbitWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* CONTENT ABOVE BG */
-.hero > * {
-  position: relative;
-  z-index: 1;
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* 🟣 EYEBROW */
+.orbitOne {
+  width: 720px;
+  height: 720px;
+
+  animation: rotateOrbit 75s linear infinite;
+}
+
+.orbitTwo {
+  width: 980px;
+  height: 980px;
+
+  animation: rotateOrbitReverse 110s linear infinite;
+
+  opacity: 0.7;
+}
+
+/* ICONS */
+
+.icon,
+.iconSecondary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 64px;
+  height: 64px;
+
+  margin: -32px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(14px);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 0 40px rgba(99, 102, 241, 0.16),
+    inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+.iconSecondary {
+  width: 54px;
+  height: 54px;
+
+  margin: -27px;
+
+  font-size: 22px;
+
+  opacity: 0.8;
+}
+
+/* EYEBROW */
 
 .eyebrow {
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  font-size: 13px;
-  color: var(--text-secondary);
-  backdrop-filter: blur(6px);
-}
-
-/* 🚀 MARQUEE */
-
-.marqueeWrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  overflow: hidden;
-  border-top: 1px solid var(--border);
-  padding: 12px 0;
-  background: var(--bg);
-}
-
-.marquee {
   display: flex;
-  width: max-content;
-  animation: scroll 18s linear infinite;
-}
+  align-items: center;
+  gap: 10px;
 
-.marqueeItem {
-  margin-right: 40px;
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
   font-size: 14px;
-  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  box-shadow:
+    0 0 30px rgba(99, 102, 241, 0.15);
 }
 
-@keyframes scroll {
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6366f1;
+
+  box-shadow:
+    0 0 10px #6366f1,
+    0 0 20px #6366f1;
+}
+
+/* BUTTONS */
+
+.primaryBtn,
+.secondaryBtn {
+  min-width: 190px;
+  height: 54px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.primaryBtn {
+  background: var(--accent);
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.secondaryBtn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(10px);
+
+  color: white;
+}
+
+.secondaryBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ANIMATIONS */
+
+@keyframes rotateOrbit {
   from {
-    transform: translateX(0);
+    transform: rotate(0deg);
   }
+
   to {
-    transform: translateX(-50%);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateOrbitReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .hero {
+    --orbit1-radius: 240px;
+    --orbit2-radius: 340px;
+  }
+
+  .orbitOne {
+    width: 480px;
+    height: 480px;
+  }
+
+  .orbitTwo {
+    width: 680px;
+    height: 680px;
+  }
+
+  .icon,
+  .iconSecondary {
+    width: 44px;
+    height: 44px;
+
+    font-size: 18px;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    max-width: 260px;
   }
 }
