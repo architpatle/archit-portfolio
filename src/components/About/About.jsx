@@ -1,61 +1,50 @@
 import Container from "../common/Container";
-import SectionHeader from "../common/SectionHeader";
+import styles from "./About.module.css";
+import img from "../../../src/assets/images/archit.jpeg"
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section
+      id="about"
+      className={`relative z-10 py-28 md:py-36 ${styles.about}`}
+    >
       <Container>
 
-        <SectionHeader title="About" />
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 items-center">
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-
-          {/* LEFT SIDE */}
+          {/* LEFT */}
           <div>
 
-            {/* BIG STATEMENT */}
-            <h3 className="text-2xl md:text-3xl font-heading leading-snug mb-6">
-              I don’t just build interfaces — I make them{" "}
-              <span className="text-accent">feel right</span>.
-            </h3>
+            {/* EYEBROW */}
+            <div className={styles.eyebrow}>
+              <span className={styles.dot}></span>
+              About Me
+            </div>
+
+            {/* HUGE STATEMENT */}
+            <h2 className={` text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+              I craft digital experiences that blend{" "}
+              <span>design clarity!</span>
+            </h2>
 
             {/* DESCRIPTION */}
-            <p className="text-secondary leading-relaxed mb-4">
-              I’m a frontend developer who focuses on clarity, structure, and
-              performance. Every interface I build is designed to be intuitive,
-              scalable, and easy to interact with.
-            </p>
-
-            <p className="text-secondary leading-relaxed">
-              My work sits at the intersection of design and development —
-              ensuring that the final product not only looks good, but actually
-              works well in real-world scenarios.
+            <p className={styles.description}>
+              I’m a Web developer focused on building visually polished,
+              scalable, and performance-driven interfaces. My work sits between
+              development and design, ensuring that products not only look modern,
+              but feel seamless to use.
             </p>
 
           </div>
 
-          {/* RIGHT SIDE (TRAITS) */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* RIGHT IMAGE */}
+          <div className={styles.imageWrapper}>
 
-            <div className="card">
-              <p className="text-sm text-secondary mb-1">Approach</p>
-              <p className="font-heading">Clarity First</p>
-            </div>
-
-            <div className="card">
-              <p className="text-sm text-secondary mb-1">Focus</p>
-              <p className="font-heading">Scalable UI</p>
-            </div>
-
-            <div className="card">
-              <p className="text-sm text-secondary mb-1">Priority</p>
-              <p className="font-heading">Performance</p>
-            </div>
-
-            <div className="card">
-              <p className="text-sm text-secondary mb-1">Mindset</p>
-              <p className="font-heading">User-Centric</p>
-            </div>
+            <img
+              src={img}
+              alt="About"
+              className={styles.image}
+            />
 
           </div>
 

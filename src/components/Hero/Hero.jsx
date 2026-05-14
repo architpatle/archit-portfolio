@@ -33,43 +33,7 @@ export default function Hero() {
     <section
       className={`relative py-28 md:py-36 overflow-hidden ${styles.hero}`}
     >
-      {/* BACKGROUND */}
-      <div className={styles.gradientBg}></div>
-
-      {/* ORBIT SYSTEM */}
-      <div className={styles.orbitWrapper}>
-
-        <div className={`${styles.orbit} ${styles.orbitOne}`}>
-          {orbitIcons.map((icon, i) => (
-            <div
-              key={i}
-              className={styles.icon}
-              style={{
-                transform: `rotate(${i * 40}deg) translateX(var(--orbit1-radius)) rotate(-${i * 40
-                  }deg)`,
-              }}
-            >
-              {icon}
-            </div>
-          ))}
-        </div>
-
-        <div className={`${styles.orbit} ${styles.orbitTwo}`}>
-          {orbitIcons.map((icon, i) => (
-            <div
-              key={i}
-              className={styles.iconSecondary}
-              style={{
-                transform: `rotate(${i * 40}deg) translateX(var(--orbit2-radius)) rotate(-${i * 40
-                  }deg)`,
-              }}
-            >
-              {icon}
-            </div>
-          ))}
-        </div>
-
-      </div>
+      
 
       <Container>
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto relative z-10">

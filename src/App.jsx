@@ -11,6 +11,7 @@ import Skills from "./components/Skills/Skills";
 import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import OrbitalBackground from "./components/common/OrbitalBackground";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ function App() {
 
   return (
     <div className="bg-bg text-primary min-h-screen">
-      <Background />
+      <OrbitalBackground />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <ThemeToggle />

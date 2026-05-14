@@ -1,0 +1,139 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  --orbit1-radius: 360px;
+  --orbit2-radius: 490px;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(79, 70, 229, 0.15), transparent 35%),
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.02), transparent 60%);
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.orbitOne {
+  width: 720px;
+  height: 720px;
+
+  animation: rotateOrbit 75s linear infinite;
+}
+
+.orbitTwo {
+  width: 980px;
+  height: 980px;
+
+  opacity: 0.7;
+
+  animation: rotateOrbitReverse 110s linear infinite;
+}
+
+.icon,
+.iconSecondary {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 64px;
+  height: 64px;
+
+  margin: -32px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+
+  color: white;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 0 40px rgba(99,102,241,0.16),
+    inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+.iconSecondary {
+  width: 54px;
+  height: 54px;
+
+  margin: -27px;
+
+  font-size: 22px;
+
+  opacity: 0.8;
+}
+
+@keyframes rotateOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateOrbitReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .wrapper {
+    --orbit1-radius: 240px;
+    --orbit2-radius: 340px;
+  }
+
+  .orbitOne {
+    width: 480px;
+    height: 480px;
+  }
+
+  .orbitTwo {
+    width: 680px;
+    height: 680px;
+  }
+
+  .icon,
+  .iconSecondary {
+    width: 44px;
+    height: 44px;
+
+    font-size: 18px;
+  }
+}
