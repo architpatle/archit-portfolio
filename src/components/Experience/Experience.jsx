@@ -1,75 +1,88 @@
 import Container from "../common/Container";
-import SectionHeader from "../common/SectionHeader";
+import styles from "./Experience.module.css";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 md:py-32">
+    <section
+      id="experience"
+      className={`relative z-10 py-28 md:py-36 ${styles.experience}`}
+    >
       <Container>
 
-        <SectionHeader title="Experience" />
+        {/* TOP SECTION */}
+        <div className="text-center max-w-5xl mx-auto mb-24">
 
-        {/* MAIN BLOCK */}
-        <div className="max-w-7xl">
+          {/* EYEBROW */}
+          <div className={styles.eyebrow}>
+            <span className={styles.dot}></span>
+            Experience
+          </div>
 
-          <div className="border border-border rounded-2xl p-8 md:p-10 relative overflow-hidden">
+          {/* MAIN HEADING */}
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+            Building scalable interfaces with{" "}
+            <span>performance</span>, usability,
+            and real-world product thinking.
+          </h2>
 
-            {/* SUBTLE ACCENT LINE */}
-            <div className="absolute left-0 top-0 h-full w-[2px] bg-accent opacity-60"></div>
+        </div>
 
-            {/* HEADER */}
-            <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-4 mb-6">
+        {/* EXPERIENCE BLOCK */}
+        <div className={styles.timeline}>
 
-              <div>
-                <h3 className="text-2xl font-heading">
-                  Frontend Developer
-                </h3>
-                <p className="text-secondary text-sm">
-                  Royals Webtech Pvt. Ltd.
-                </p>
-              </div>
+          {/* ROW */}
+          <div className={styles.row}>
 
-              <span className="text-sm text-secondary">
-                July 2025 — Present
-              </span>
+            {/* LEFT */}
+            <div className={styles.left}>
+
+              <h3 className={styles.year}>
+                July 2025 - Present
+              </h3>
+
+              <p className={styles.company}>
+                ROYALS WEBTECH PVT. LTD.
+              </p>
+
+              <h4 className={styles.role}>
+                Frontend Developer
+              </h4>
 
             </div>
 
-            {/* STRONG LINE */}
-            <p className="text-lg leading-relaxed mb-8 max-w-2xl">
-              Focused on building scalable frontend systems and delivering
-              clean, high-performance user interfaces for real-world products.
-            </p>
+            {/* CENTER */}
+            <div className={styles.center}>
 
-            {/* IMPACT GRID */}
-            <div className="grid md:grid-cols-2 gap-6">
+              <p className={styles.description}>
+                Focused on building scalable frontend systems,
+                reusable React component architecture,
+                and modern responsive interfaces optimized for
+                usability, maintainability, and performance.
+              </p>
 
-              <div>
-                <p className="text-sm text-secondary mb-1">What I built</p>
-                <p className="font-heading">
-                  Reusable component systems using React
-                </p>
+            </div>
+
+            {/* RIGHT */}
+            <div className={styles.right}>
+
+              <div className={styles.metricTop}>
+                <span>Performance Remark</span>
+
+                <div className={styles.metricBadge}>
+                  90+
+                </div>
               </div>
 
-              <div>
-                <p className="text-sm text-secondary mb-1">What improved</p>
-                <p className="font-heading">
-                  Faster load times & smoother UI interactions
-                </p>
+              <div className={styles.progressTrack}>
+                <div
+                  className={styles.progressFill}
+                  style={{ width: "90%" }}
+                ></div>
               </div>
 
-              <div>
-                <p className="text-sm text-secondary mb-1">How I worked</p>
-                <p className="font-heading">
-                  Close collaboration with design & product teams
-                </p>
-              </div>
-
-              <div>
-                <p className="text-sm text-secondary mb-1">Focus area</p>
-                <p className="font-heading">
-                  Performance, scalability & usability
-                </p>
-              </div>
+              <p className={styles.metricInfo}>
+                Appreciated for responsive design and performance-focused development.
+              </p>
 
             </div>
 
