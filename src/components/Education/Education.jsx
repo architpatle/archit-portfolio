@@ -1,53 +1,111 @@
 import Container from "../common/Container";
-import SectionHeader from "../common/SectionHeader";
+import styles from "./Education.module.css";
 
 const education = [
   {
-    degree: "B.Tech in Computer Science",
+    course: "B.Tech in Computer Science Engineering",
     institute: "G H Raisoni University",
-    meta: "2022 — 2026 · CGPA 8.9",
+    duration: "2022 - 2026",
+    score: "CGPA 8.9",
   },
   {
-    degree: "HSC",
+    course: "Higher Secondary Certificate (HSC)",
     institute: "IINSIGHT Jr. College",
-    meta: "2022 · 88.7%",
+    duration: "2022",
+    score: "88.7%",
   },
   {
-    degree: "SSC",
+    course: "Secondary School Certificate (SSC)",
     institute: "Bharti Krishna Vidya Vihar",
-    meta: "2020 · 92.8%",
+    duration: "2020",
+    score: "92.8%",
   },
 ];
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 md:py-32">
+    <section
+      id="education"
+      className={`relative z-10 py-28 md:py-36 ${styles.education}`}
+    >
       <Container>
 
-        <SectionHeader title="Education" />
+        {/* TOP SECTION */}
+        <div className="text-center max-w-5xl mx-auto mb-24">
 
-        <div className="space-y-10">
+          {/* EYEBROW */}
+          <div className={styles.eyebrow}>
+            <span className={styles.dot}></span>
+            Education
+          </div>
+
+          {/* MAIN HEADING */}
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+            Academic foundation shaped through{" "}
+            <span>consistency</span>, discipline,
+            and continuous technical learning.
+          </h2>
+
+        </div>
+
+        {/* EDUCATION TIMELINE */}
+        <div className={styles.timeline}>
 
           {education.map((item, index) => (
-            <div
-              key={index}
-              className="border-b border-border pb-6"
-            >
+            <div key={index} className={styles.row}>
 
-              {/* DEGREE */}
-              <h3 className="text-xl font-heading mb-1">
-                {item.degree}
-              </h3>
+              {/* LEFT */}
+              <div className={styles.left}>
 
-              {/* INSTITUTE */}
-              <p className="text-secondary">
-                {item.institute}
-              </p>
+                <h3 className={styles.course}>
+                  {item.course}
+                </h3>
 
-              {/* META */}
-              <p className="text-sm text-secondary mt-1">
-                {item.meta}
-              </p>
+              </div>
+
+              {/* CENTER */}
+              <div className={styles.center}>
+
+                <p className={styles.institute}>
+                  {item.institute}
+                </p>
+
+                <p className={styles.duration}>
+                  {item.duration}
+                </p>
+
+              </div>
+
+              {/* RIGHT */}
+              <div className={styles.right}>
+
+                <div className={styles.metricTop}>
+                  <span>Academic Score</span>
+
+                  <div className={styles.metricBadge}>
+                    {item.score}
+                  </div>
+                </div>
+
+                <div className={styles.progressTrack}>
+                  <div
+                    className={styles.progressFill}
+                    style={{
+                      width:
+                        item.score === "CGPA 8.9"
+                          ? "89%"
+                          : item.score === "88.7%"
+                            ? "88.7%"
+                            : "92.8%",
+                    }}
+                  ></div>
+                </div>
+
+                {/* <p className={styles.metricInfo}>
+                  Consistent academic performance with strong technical focus.
+                </p> */}
+
+              </div>
 
             </div>
           ))}
