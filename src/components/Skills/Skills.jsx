@@ -1,45 +1,110 @@
 import Container from "../common/Container";
-import SectionHeader from "../common/SectionHeader";
+import styles from "./Skills.module.css";
+
+import {
+  FiCode,
+  FiFigma,
+  FiCpu,
+} from "react-icons/fi";
 
 const stack = [
   {
-    title: "Frontend",
-    items: "React, JavaScript, HTML, CSS, Tailwind, Bootstrap",
+    title: "Frontend Development",
+    icon: <FiCode />,
+    description:
+      "Building responsive and scalable interfaces with modern frontend technologies and reusable component architecture.",
+    items: [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Tailwind",
+      "Bootstrap",
+    ],
   },
   {
-    title: "UI / UX",
-    items: "Figma, Wireframing, Prototyping, Interface Design",
+    title: "UI / UX Design",
+    icon: <FiFigma />,
+    description:
+      "Designing intuitive user experiences with structured wireframes, clean interfaces, and thoughtful interaction flow.",
+    items: [
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "Interface Design",
+    ],
   },
   {
     title: "Programming",
-    items: "C, C++",
+    icon: <FiCpu />,
+    description:
+      "Strong understanding of programming fundamentals, logic building, and problem-solving concepts.",
+    items: [
+      "C",
+      "C++",
+    ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32">
+    <section
+      id="skills"
+      className={`relative z-10 py-28 md:py-36 ${styles.skills}`}
+    >
       <Container>
 
-        <SectionHeader title="Stack" />
+        {/* TOP */}
+        <div className="text-center max-w-5xl mx-auto mb-24">
 
-        <div className="space-y-10">
+          {/* EYEBROW */}
+          <div className={styles.eyebrow}>
+            <span className={styles.dot}></span>
+            Skills
+          </div>
+
+          {/* HEADING */}
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+            Combining <span>design thinking</span>,
+            frontend engineering, and modern web technologies.
+          </h2>
+
+        </div>
+
+        {/* GRID */}
+        <div className={styles.grid}>
 
           {stack.map((group, index) => (
             <div
               key={index}
-              className="border-b border-border pb-6"
+              className={styles.card}
             >
 
+              {/* ICON */}
+              <div className={styles.iconBox}>
+                {group.icon}
+              </div>
+
               {/* TITLE */}
-              <h3 className="text-xl font-heading mb-2">
+              <h3 className={styles.title}>
                 {group.title}
               </h3>
 
-              {/* ITEMS */}
-              <p className="text-secondary max-w-2xl leading-relaxed">
-                {group.items}
+              {/* DESCRIPTION */}
+              <p className={styles.description}>
+                {group.description}
               </p>
+
+              {/* TAGS */}
+              <div className={styles.tags}>
+
+                {group.items.map((item, i) => (
+                  <span key={i}>
+                    {item}
+                  </span>
+                ))}
+
+              </div>
 
             </div>
           ))}
