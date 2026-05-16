@@ -1,51 +1,90 @@
 import Container from "../common/Container";
+import styles from "./Contact.module.css";
+
+import {
+  FiArrowUpRight,
+  FiMail,
+  FiLinkedin,
+} from "react-icons/fi";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-28 md:py-36">
+    <section
+      id="contact"
+      className={`relative z-10 py-28 md:py-36 ${styles.contact}`}
+    >
       <Container>
 
-        <div className="flex justify-center">
+        <div className={styles.wrapper}>
 
-          {/* CARD */}
-          <div className="max-w-4xl w-full text-center 
-                          border border-border rounded-2xl 
-                          bg-surface transition-all duration-300 
-                         hover:-translate-y-1 hover:border-accent
-                          p-10 md:p-12">
+          {/* GLOW */}
+          <div className={styles.glow}></div>
 
-            {/* HEADING */}
-            <h2 className="text-3xl md:text-5xl font-heading leading-tight mb-6">
-              Let’s build something meaningful together.
-            </h2>
+          {/* EYEBROW */}
+          <div className={styles.eyebrow}>
+            <span className={styles.dot}></span>
+            Contact
+          </div>
 
-            {/* SUBTEXT */}
-            <p className="text-secondary mb-10 leading-relaxed">
-              Whether it’s a project, collaboration, or just a conversation —
-              I’m always open to connecting.
-            </p>
+          {/* HEADING */}
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+            Let’s create something{" "}
+            <span>impactful</span> together.
+          </h2>
 
-            {/* CTA */}
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+          {/* SUBTEXT */}
+          <p className={styles.description}>
+            Whether it’s a product idea, frontend collaboration,
+            freelance opportunity, or simply a conversation about
+            design and development — I’m always open to connecting.
+          </p>
 
-              <a
-                href="mailto:architpatle06@gmail.com"
-                className="px-6 py-3 rounded-lg bg-accent text-white text-sm hover:opacity-90 transition"
-              >
-                architpatle06@gmail.com
-              </a>
+          {/* ACTIONS */}
+          <div className={styles.actions}>
 
-              <a
-                href="https://www.linkedin.com/in/archit-patle"
-                target="_blank"
-                className="px-6 py-3 rounded-lg border border-border text-sm hover:border-accent hover:text-accent transition"
-              >
-                LinkedIn Profile
-              </a>
+            {/* EMAIL */}
+            <a
+              href="mailto:architpatle06@gmail.com"
+              className={styles.primaryBtn}
+            >
 
-            </div>
+              <div className={styles.btnLeft}>
+                <FiMail />
+                <span>Email Me</span>
+              </div>
+
+              <div className={styles.arrow}>
+                <FiArrowUpRight />
+              </div>
+
+            </a>
+
+            {/* LINKEDIN */}
+            <a
+              href="https://www.linkedin.com/in/archit-patle"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.secondaryBtn}
+            >
+
+              <div className={styles.btnLeft}>
+                <FiLinkedin />
+                <span>LinkedIn</span>
+              </div>
+
+              <div className={styles.arrow}>
+                <FiArrowUpRight />
+              </div>
+
+            </a>
 
           </div>
+
+          {/* FOOTNOTE */}
+          <p className={styles.footnote}>
+            Currently available for internships,
+            freelance work, and frontend opportunities.
+          </p>
 
         </div>
 
