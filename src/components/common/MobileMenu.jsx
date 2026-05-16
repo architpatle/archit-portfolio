@@ -86,7 +86,7 @@ export default function MobileMenu({ menuOpen, setMenuOpen }) {
           </div>
 
           {/* BOTTOM CTA */}
-          <div className="mt-auto pt-10">
+          <div className="mt-10 pt-10">
 
             <a
               href={resume}
