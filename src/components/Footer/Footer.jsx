@@ -3,17 +3,12 @@ import styles from "./Footer.module.css";
 import {
   FiGithub,
   FiLinkedin,
-  FiArrowUp,
+  FiMail,
 } from "react-icons/fi";
 
-export default function Footer() {
+import { FaWhatsapp } from "react-icons/fa";
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+export default function Footer() {
 
   return (
     <footer className={styles.footer}>
@@ -31,6 +26,16 @@ export default function Footer() {
             Frontend developer crafting modern,
             scalable and immersive web experiences.
           </p>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=architpatle06@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className={styles.email}
+          >
+            <FiMail />
+            <span>architpatle06@gmail.com</span>
+          </a>
 
         </div>
 
@@ -64,12 +69,14 @@ export default function Footer() {
             <FiGithub />
           </a>
 
-          <button
-            onClick={scrollToTop}
+          <a
+            href="https://wa.me/918999186683"
+            target="_blank"
+            rel="noreferrer"
             className={styles.topBtn}
           >
-            <FiArrowUp />
-          </button>
+            <FaWhatsapp />
+          </a>
 
         </div>
 
