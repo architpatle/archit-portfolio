@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Background from "./components/common/Background";
 import Navbar from "./components/common/Navbar";
 import MobileMenu from "./components/common/MobileMenu";
-import ThemeToggle from "./components/common/ThemeToggle";
+// import ThemeToggle from "./components/common/ThemeToggle";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";

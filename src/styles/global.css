@@ -5,16 +5,18 @@
 /* ---------- DESIGN TOKENS ---------- */
 
 :root {
-  /* LIGHT THEME */
-  --bg: #FFFFFF;
-  --surface: #F8F8F8;
-  --border: rgba(0, 0, 0, 0.08);
 
-  --text-primary: #111111;
-  --text-secondary: #525252;
+  /* DARK THEME DEFAULT */
 
-  --accent: #4F46E5;
-  --accent-hover: #6366F1;
+  --bg: #0E0E10;
+  --surface: #16161A;
+  --border: rgba(255, 255, 255, 0.08);
+
+  --text-primary: #F5F5F5;
+  --text-secondary: #A1A1AA;
+
+  --accent: #6366F1;
+  --accent-hover: #7C82FF;
 
   --font-heading: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -25,16 +27,6 @@
   --transition-normal: 0.3s ease;
 }
 
-/* DARK THEME */
-
-[data-theme="dark"] {
-  --bg: #0E0E10;
-  --surface: #16161A;
-  --border: rgba(255, 255, 255, 0.08);
-
-  --text-primary: #F5F5F5;
-  --text-secondary: #A1A1AA;
-}
 
 html {
   scroll-behavior: smooth;
