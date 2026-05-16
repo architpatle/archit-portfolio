@@ -1,37 +1,75 @@
-export default function Footer() {
-  return (
-    <footer className="py-10 border-t border-border mt-20">
+import styles from "./Footer.module.css";
 
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-secondary">
+import {
+  FiGithub,
+  FiLinkedin,
+  FiArrowUp,
+} from "react-icons/fi";
+
+export default function Footer() {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <footer className={styles.footer}>
+
+      <div className={styles.wrapper}>
 
         {/* LEFT */}
-        <p className="font-heading text-primary">
-          Archit Patle
-        </p>
+        <div className={styles.left}>
+
+          <h3 className={styles.brand}>
+            Archit Patle
+          </h3>
+
+          <p className={styles.text}>
+            Frontend developer crafting modern,
+            scalable and immersive web experiences.
+          </p>
+
+        </div>
 
         {/* CENTER */}
-        <p>
-          © {new Date().getFullYear()} All rights reserved
-        </p>
+        <div className={styles.center}>
+
+          <p>
+            © {new Date().getFullYear()} All rights reserved
+          </p>
+
+        </div>
 
         {/* RIGHT */}
-        <div className="flex gap-6">
+        <div className={styles.right}>
 
           <a
             href="https://www.linkedin.com/in/archit-patle"
             target="_blank"
-            className="hover:text-primary transition"
+            rel="noreferrer"
+            className={styles.iconBtn}
           >
-            LinkedIn
+            <FiLinkedin />
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/architpatle"
             target="_blank"
-            className="hover:text-primary transition"
+            rel="noreferrer"
+            className={styles.iconBtn}
           >
-            GitHub
+            <FiGithub />
           </a>
+
+          <button
+            onClick={scrollToTop}
+            className={styles.topBtn}
+          >
+            <FiArrowUp />
+          </button>
 
         </div>
 
