@@ -1,72 +1,124 @@
 import Container from "../common/Container";
-import SectionHeader from "../common/SectionHeader";
+import styles from "./Projects.module.css";
+import homeverse from "../../assets/images/homeverseImg.png"
+import habitual from "../../assets/images/habitualImg.png"
+import streetInfoHub from "../../assets/images/streetInfoHubImg.png"
+
+import {
+  FiArrowUpRight,
+  FiHome,
+  FiCheckSquare,
+  FiMap,
+} from "react-icons/fi";
 
 const projects = [
   {
     title: "HomeVerse",
     description:
       "A responsive real estate platform focused on clean UI, smooth navigation, and scalable frontend architecture.",
-    tech: ["React", "Bootstrap"],
+    image: homeverse,
+    icon: <FiHome />,
     link: "https://homeverse-apk.netlify.app/",
   },
   {
     title: "Habitual",
     description:
       "A habit tracking application designed to simplify daily routines with minimal and intuitive interactions.",
-    tech: ["React", "UI/UX"],
+    image: habitual,
+    icon: <FiCheckSquare />,
     link: "#",
   },
   {
-    title: "Vigista",
+    title: "Street Info Hub",
     description:
-      "A concept-based image platform exploring modern layouts and user-focused visual browsing experiences.",
-    tech: ["UI Design", "Frontend"],
-    link: "#",
+      "A citizen-centric road damage awareness platform, allowing citizens to report and review road damage issues.",
+    image: streetInfoHub,
+    icon: <FiMap />,
+    link: "https://street-info-hub.netlify.app/",
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32">
+    <section
+      id="projects"
+      className={`relative z-10 py-28 md:py-36 ${styles.projects}`}
+    >
       <Container>
 
-        <SectionHeader title="Selected Work" />
+        {/* TOP SECTION */}
+        <div className="text-center max-w-5xl mx-auto mb-24">
 
-        <div className="grid md:grid-cols-3 gap-6">
+          {/* EYEBROW */}
+          <div className={styles.eyebrow}>
+            <span className={styles.dot}></span>
+            Selected Work
+          </div>
+
+          {/* HEADING */}
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+            Turning concepts into{" "}
+            <span>interactive experiences </span>
+            through clean frontend engineering.
+          </h2>
+
+        </div>
+
+        {/* PROJECT GRID */}
+        <div className={styles.grid}>
 
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group border border-border rounded-2xl p-6 
-                         bg-surface transition-all duration-300 
-                         hover:-translate-y-1 hover:border-accent"
+              className={styles.card}
             >
 
-              {/* TITLE */}
-              <h3 className="text-lg font-heading mb-3 group-hover:text-accent transition">
-                {project.title}
-              </h3>
-
-              {/* DESCRIPTION */}
-              <p className="text-sm text-secondary mb-5 leading-relaxed">
-                {project.description}
-              </p>
-
-              {/* TECH */}
-              <div className="flex flex-wrap gap-2 text-xs text-secondary mb-6">
-                {project.tech.map((t, i) => (
-                  <span key={i}>{t}</span>
-                ))}
+              {/* ICON */}
+              <div className={styles.iconBox}>
+                {project.icon}
               </div>
 
-              {/* ACTION */}
-              <a
-                href={project.link}
-                target="_blank"
-                className="text-sm text-accent"
-              >
-                View →
-              </a>
+              {/* IMAGE */}
+              <div className={styles.imageWrapper}>
+
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={styles.image}
+                />
+
+              </div>
+
+              {/* CONTENT */}
+              <div className={styles.content}>
+
+                <div>
+
+                  <h3 className={styles.title}>
+                    {project.title}
+                  </h3>
+
+                  <p className={styles.description}>
+                    {project.description}
+                  </p>
+
+                </div>
+
+                {/* LINK */}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.link}
+                >
+                  <span>Live Demo</span>
+
+                  <div className={styles.arrow}>
+                    <FiArrowUpRight />
+                  </div>
+                </a>
+
+              </div>
 
             </div>
           ))}
