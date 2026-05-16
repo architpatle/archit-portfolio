@@ -26,7 +26,7 @@ function App() {
       <OrbitalBackground />
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
 
       <main>
         {/* Sections */}
