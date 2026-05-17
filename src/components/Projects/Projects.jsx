@@ -3,16 +3,26 @@ import styles from "./Projects.module.css";
 import homeverse from "../../assets/images/homeverseImg.png"
 import habitual from "../../assets/images/habitualImg.png"
 import streetInfoHub from "../../assets/images/streetInfoHubImg.png"
+import archinxt from "../../assets/images/archinxtImg.png"
 
 import {
   FiArrowUpRight,
   FiHome,
   FiCheckSquare,
   FiMap,
+  FiLayers
 } from "react-icons/fi";
 
 const projects = [
   {
+    title: "ArchInxT",
+    description:
+      "ArchInxT simplifies modern technology and UI design through visual storytelling, and immersive digital learning experiences.",
+    image: archinxt,
+    icon: <FiLayers />,
+    link: "https://archinxt.netlify.app/",
+  },
+   {
     title: "HomeVerse",
     description:
       "A responsive real estate platform focused on clean UI, smooth navigation, and scalable frontend architecture.",
@@ -20,14 +30,14 @@ const projects = [
     icon: <FiHome />,
     link: "https://homeverse-apk.netlify.app/",
   },
-  {
-    title: "Habitual",
-    description:
-      "A habit tracking application designed to simplify daily routines with minimal and intuitive interactions.",
-    image: habitual,
-    icon: <FiCheckSquare />,
-    link: "#",
-  },
+  // {
+  //   title: "Habitual",
+  //   description:
+  //     "A habit tracking application designed to simplify daily routines with minimal and intuitive interactions.",
+  //   image: habitual,
+  //   icon: <FiCheckSquare />,
+  //   link: "#",
+  // },
   {
     title: "Street Info Hub",
     description:
