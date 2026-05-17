@@ -42,7 +42,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className={`relative z-10 py-28 md:py-36 ${styles.projects}`}
+      className={`relative z-10 py-14 md:py-18 ${styles.projects}`}
     >
       <Container>
 

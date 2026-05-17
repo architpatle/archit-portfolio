@@ -5,12 +5,12 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className={`relative z-10 py-28 md:py-36 ${styles.experience}`}
+      className={`relative z-10 py-14 md:py-18 ${styles.experience}`}
     >
       <Container>
 
         {/* TOP SECTION */}
-        <div className="text-center max-w-5xl mx-auto mb-24">
+        <div className="text-center max-w-5xl mx-auto mb-14">
 
           {/* EYEBROW */}
           <div className={styles.eyebrow}>

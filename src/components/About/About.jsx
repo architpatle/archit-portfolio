@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className={`relative z-10 py-28 md:py-36 ${styles.about}`}
+      className={`relative z-10 py-14 md:py-18 ${styles.about}`}
     >
       <Container>
 

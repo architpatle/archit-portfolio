@@ -50,7 +50,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className={`relative z-10 py-28 md:py-36 ${styles.skills}`}
+      className={`relative z-10 py-14 md:py-18e ${styles.skills}`}
     >
       <Container>
 

@@ -26,12 +26,12 @@ export default function Education() {
   return (
     <section
       id="education"
-      className={`relative z-10 py-28 md:py-36 ${styles.education}`}
+      className={`relative z-10 py-14 md:py-18 ${styles.education}`}
     >
       <Container>
 
         {/* TOP SECTION */}
-        <div className="text-center max-w-5xl mx-auto mb-24">
+        <div className="text-center max-w-5xl mx-auto mb-14">
 
           {/* EYEBROW */}
           <div className={styles.eyebrow}>
