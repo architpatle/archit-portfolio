@@ -34,9 +34,9 @@ export default function Contact() {
 
           {/* SUBTEXT */}
           <p className={styles.description}>
-            Whether it’s a product idea, frontend collaboration,
+            Whether it’s a product idea, frontend collaboration, full-stack development,
             freelance opportunity, or simply a conversation about
-            design and development — I’m always open to connecting.
+            design and development - I’m always open to connecting.
           </p>
 
           {/* ACTIONS */}
@@ -83,7 +83,7 @@ export default function Contact() {
           {/* FOOTNOTE */}
           <p className={styles.footnote}>
             Currently available for internships,
-            freelance work, and frontend opportunities.
+            freelance work, and web development opportunities.
           </p>
 
         </div>

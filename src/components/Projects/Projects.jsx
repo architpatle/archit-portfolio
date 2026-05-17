@@ -59,7 +59,7 @@ export default function Projects() {
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
             Turning concepts into{" "}
             <span>interactive experiences </span>
-            through clean frontend engineering.
+            through scalable development solutions.skil
           </h2>
 
         </div>

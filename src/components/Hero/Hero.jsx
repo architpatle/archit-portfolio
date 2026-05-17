@@ -57,8 +57,7 @@ export default function Hero() {
 
           {/* DESCRIPTION */}
           <p className="text-secondary max-w-xl mb-10 leading-relaxed text-base sm:text-lg">
-            I design and develop clean, scalable web interfaces focused on
-            usability, performance, and meaningful user experience.
+            I craft modern web applications with clean design, scalable development, and user-focused experiences built for performance and impact.
           </p>
 
           {/* CTA */}

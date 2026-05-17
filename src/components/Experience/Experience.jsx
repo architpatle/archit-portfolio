@@ -20,9 +20,9 @@ export default function Experience() {
 
           {/* MAIN HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
-            Building scalable interfaces with{" "}
-            <span>performance</span>, usability,
-            and real-world product thinking.
+            Contributing to <span>real-world projects</span> with
+            modern development
+            and collaborative product thinking.
           </h2>
 
         </div>

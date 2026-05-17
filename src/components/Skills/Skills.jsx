@@ -65,8 +65,8 @@ export default function Skills() {
 
           {/* HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
-            Combining <span>design thinking</span>,
-            frontend engineering, and modern web technologies.
+            Leveraging <span>modern tools </span>
+to create seamless digital experiences.
           </h2>
 
         </div>

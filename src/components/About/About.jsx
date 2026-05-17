@@ -31,7 +31,7 @@ export default function About() {
             <p className={styles.description}>
               I’m a Web developer focused on building visually polished,
               scalable, and performance-driven interfaces. My work sits between
-              development and design, ensuring that products not only look modern,
+                design and development, ensuring that products not only look modern,
               but feel seamless to use.
             </p>
 
