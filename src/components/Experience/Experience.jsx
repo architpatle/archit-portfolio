@@ -26,7 +26,7 @@ export default function Experience() {
       <Container>
 
         {/* TOP SECTION */}
-        <div className="text-center max-w-5xl mx-auto mb-8">
+        <div className="text-center max-w-5xl mx-auto lg:mb-14 mb-8">
 
           {/* EYEBROW */}
           <div className={styles.eyebrow}>
