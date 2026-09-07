@@ -106,11 +106,21 @@
 @media (max-width: 768px) {
 
   .heading {
-    font-size: 3rem;
+    font-size: 3rem; 
     line-height: 1.05;
   }
 
   .imageWrapper {
     min-height: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .heading{
+    font-size: 28px !important ;
+  }
+  .description{
+    font-size: 16px !important ;
   }
 }

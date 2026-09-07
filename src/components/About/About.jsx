@@ -23,16 +23,13 @@ export default function About() {
 
             {/* HUGE STATEMENT */}
             <h2 className={` text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
-              I craft digital experiences that blend{" "}
-              <span>design clarity!</span>
+              Turning thoughtful ideas into meaningful {" "}
+              <span>digital experiences</span>
             </h2>
 
             {/* DESCRIPTION */}
             <p className={styles.description}>
-              I’m a Web developer focused on building visually polished,
-              scalable, and performance-driven interfaces. My work sits between
-                design and development, ensuring that products not only look modern,
-              but feel seamless to use.
+              I’m a creative developer passionate about bringing ideas to life through thoughtful design, strategic thinking, and technology. I focus on creating experiences that are visually refined, purposeful, and built to make a meaningful impact.
             </p>
 
           </div>

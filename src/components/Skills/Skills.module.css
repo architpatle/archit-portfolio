@@ -217,3 +217,9 @@
     font-size: 14px;
   }
 }
+@media (max-width:480px) {
+  .heading{
+    font-size: 28px !important;
+    text-align: left;
+  }
+}

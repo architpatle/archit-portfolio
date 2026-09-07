@@ -1,6 +1,22 @@
 import Container from "../common/Container";
 import styles from "./Experience.module.css";
 
+const experiences = [
+  {
+    year: "July 2025 - Present",
+    company: "ROYALS WEBTECH PVT. LTD.",
+    role: "Software Developer",
+    description:
+      "Contributing to modern digital experiences through thoughtful design and scalable development, while building responsive, reusable systems, taking initiative, and collaborating to create intuitive solutions.",
+    metricLabel: "Performance Remark",
+    metricValue: "90+",
+    progress: "90%",
+    metricInfo:
+      "Recognized for taking initiative, collaborating effectively, and contributing to thoughtful, scalable digital experiences.",
+  },
+
+];
+
 export default function Experience() {
   return (
     <section
@@ -10,7 +26,7 @@ export default function Experience() {
       <Container>
 
         {/* TOP SECTION */}
-        <div className="text-center max-w-5xl mx-auto mb-14">
+        <div className="text-center max-w-5xl mx-auto mb-8">
 
           {/* EYEBROW */}
           <div className={styles.eyebrow}>
@@ -20,9 +36,9 @@ export default function Experience() {
 
           {/* MAIN HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
-            Contributing to <span>real-world projects</span> with
-            modern development
-            and collaborative product thinking.
+            Turning ideas into{" "}
+            <span>real-world digital experiences</span>{" "}
+            through creativity, technology, and collaboration
           </h2>
 
         </div>
@@ -30,63 +46,64 @@ export default function Experience() {
         {/* EXPERIENCE BLOCK */}
         <div className={styles.timeline}>
 
-          {/* ROW */}
-          <div className={styles.row}>
+          {experiences.map((experience, index) => (
+            <div
+              className={styles.row}
+              key={`${experience.company}-${index}`}
+            >
 
-            {/* LEFT */}
-            <div className={styles.left}>
+              {/* LEFT */}
+              <div className={styles.left}>
 
-              <h3 className={styles.year}>
-                July 2025 - Present
-              </h3>
+                <h3 className={styles.year}>
+                  {experience.year}
+                </h3>
 
-              <p className={styles.company}>
-                ROYALS WEBTECH PVT. LTD.
-              </p>
+                <p className={styles.company}>
+                  {experience.company}
+                </p>
 
-              <h4 className={styles.role}>
-                Frontend Developer
-              </h4>
+                <h4 className={styles.role}>
+                  {experience.role}
+                </h4>
 
-            </div>
+              </div>
 
-            {/* CENTER */}
-            <div className={styles.center}>
+              {/* CENTER */}
+              <div className={styles.center}>
 
-              <p className={styles.description}>
-                Focused on building scalable frontend systems,
-                reusable React component architecture,
-                and modern responsive interfaces optimized for
-                usability, maintainability, and performance.
-              </p>
+                <p className={styles.description}>
+                  {experience.description}
+                </p>
 
-            </div>
+              </div>
 
-            {/* RIGHT */}
-            <div className={styles.right}>
+              {/* RIGHT */}
+              <div className={styles.right}>
 
-              <div className={styles.metricTop}>
-                <span>Performance Remark</span>
+                <div className={styles.metricTop}>
+                  <span>{experience.metricLabel}</span>
 
-                <div className={styles.metricBadge}>
-                  90+
+                  <div className={styles.metricBadge}>
+                    {experience.metricValue}
+                  </div>
                 </div>
-              </div>
 
-              <div className={styles.progressTrack}>
-                <div
-                  className={styles.progressFill}
-                  style={{ width: "90%" }}
-                ></div>
-              </div>
+                <div className={styles.progressTrack}>
+                  <div
+                    className={styles.progressFill}
+                    style={{ width: experience.progress }}
+                  ></div>
+                </div>
 
-              <p className={styles.metricInfo}>
-                Appreciated for responsive design and performance-focused development.
-              </p>
+                <p className={styles.metricInfo}>
+                  {experience.metricInfo}
+                </p>
+
+              </div>
 
             </div>
-
-          </div>
+          ))}
 
         </div>
 

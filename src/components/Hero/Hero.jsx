@@ -33,7 +33,7 @@ export default function Hero() {
     <section
       className={`relative py-28 md:py-36 overflow-hidden ${styles.hero}`}
     >
-      
+
 
       <Container>
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto relative z-10">
@@ -41,7 +41,7 @@ export default function Hero() {
           {/* EYEBROW */}
           <div className={styles.eyebrow}>
             <span className={styles.dot}></span>
-            Web Developer
+            Creative Developer
           </div>
 
           {/* HEADING */}
@@ -57,7 +57,7 @@ export default function Hero() {
 
           {/* DESCRIPTION */}
           <p className="text-secondary max-w-xl mb-10 leading-relaxed text-base sm:text-lg">
-            I craft modern web applications with clean design, scalable development, and user-focused experiences built for performance and impact.
+            I transform ideas into meaningful digital experiences through thoughtful design, strategic thinking, and technology built to create real impact.
           </p>
 
           {/* CTA */}

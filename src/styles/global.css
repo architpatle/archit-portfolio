@@ -30,23 +30,28 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
+
 /* BASE STYLES */
 
 body {
+  overscroll-behavior: none;
   background-color: var(--bg);
   color: var(--text-primary);
   font-family: var(--font-body);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-heading);
 }
 
 * {
   transition: background-color var(--transition-normal),
-              color var(--transition-normal),
-              border-color var(--transition-normal);
+    color var(--transition-normal),
+    border-color var(--transition-normal);
 }
 
 /* REUSABLE */
@@ -79,12 +84,14 @@ h1, h2, h3 {
 
   animation: gradientMove 30s ease-in-out infinite alternate;
 }
+
 /* ANIMATION */
 
 @keyframes gradientMove {
   0% {
     transform: translate(0px, 0px);
   }
+
   100% {
     transform: translate(20px, -20px);
   }

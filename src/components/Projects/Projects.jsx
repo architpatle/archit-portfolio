@@ -22,7 +22,7 @@ const projects = [
     icon: <FiLayers />,
     link: "https://archinxt.netlify.app/",
   },
-   {
+  {
     title: "HomeVerse",
     description:
       "A responsive real estate platform focused on clean UI, smooth navigation, and scalable frontend architecture.",
@@ -46,6 +46,7 @@ const projects = [
     icon: <FiMap />,
     link: "https://street-info-hub.netlify.app/",
   },
+
 ];
 
 export default function Projects() {
@@ -57,7 +58,7 @@ export default function Projects() {
       <Container>
 
         {/* TOP SECTION */}
-        <div className="text-center max-w-5xl mx-auto mb-24">
+        <div className="text-center max-w-5xl mx-auto lg:mb-24 mb-16">
 
           {/* EYEBROW */}
           <div className={styles.eyebrow}>
@@ -67,9 +68,7 @@ export default function Projects() {
 
           {/* HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
-            Turning concepts into{" "}
-            <span>interactive experiences </span>
-            through scalable development solutions.skil
+            From concept to experience, <span>built with purpose and intention</span>
           </h2>
 
         </div>
@@ -83,13 +82,15 @@ export default function Projects() {
               className={styles.card}
             >
 
-              {/* ICON */}
-              <div className={styles.iconBox}>
-                {project.icon}
-              </div>
+
 
               {/* IMAGE */}
               <div className={styles.imageWrapper}>
+
+                {/* ICON */}
+                <div className={styles.iconBox}>
+                  {project.icon}
+                </div>
 
                 <img
                   src={project.image}

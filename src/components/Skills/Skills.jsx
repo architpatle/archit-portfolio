@@ -9,16 +9,16 @@ import {
 
 const stack = [
   {
-    title: "Frontend Development",
+    title: "Full-Stack Development",
     icon: <FiCode />,
     description:
-      "Building responsive and scalable interfaces with modern frontend technologies and reusable component architecture.",
+      "Building modern, scalable digital applications across the frontend and backend with a focus on clean architecture, usability, and maintainable code.",
     items: [
+      "MongoDB",
+      "Express.js",
       "React",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Tailwind",
+      "Node.js",
+      "Tailwind CSS",
       "Bootstrap",
     ],
   },
@@ -26,7 +26,7 @@ const stack = [
     title: "UI / UX Design",
     icon: <FiFigma />,
     description:
-      "Designing intuitive user experiences with structured wireframes, clean interfaces, and thoughtful interaction flow.",
+      "Designing intuitive and visually refined experiences through thoughtful interfaces, structured user flows, and purposeful interactions.",
     items: [
       "Figma",
       "Wireframing",
@@ -35,16 +35,20 @@ const stack = [
     ],
   },
   {
-    title: "Programming",
+    title: "Programming & Problem Solving",
     icon: <FiCpu />,
     description:
-      "Strong understanding of programming fundamentals, logic building, and problem-solving concepts.",
+      "Strengthening programming fundamentals, problem-solving abilities, and algorithmic thinking through continuous learning and DSA practice.",
     items: [
       "C",
       "C++",
+      "Data Structures",
+      "Algorithms",
+      "Problem Solving",
     ],
   },
 ];
+
 
 export default function Skills() {
   return (
@@ -55,7 +59,7 @@ export default function Skills() {
       <Container>
 
         {/* TOP */}
-        <div className="text-center max-w-5xl mx-auto mb-24">
+        <div className="text-center max-w-5xl mx-auto lg:mb-24 mb-16">
 
           {/* EYEBROW */}
           <div className={styles.eyebrow}>
@@ -66,7 +70,7 @@ export default function Skills() {
           {/* HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
             Leveraging <span>modern tools </span>
-to create seamless digital experiences.
+            to create seamless digital experiences
           </h2>
 
         </div>

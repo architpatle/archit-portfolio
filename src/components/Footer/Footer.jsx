@@ -26,8 +26,7 @@ export default function Footer() {
             </h3>
 
             <p className={styles.text}>
-              Frontend developer crafting modern,
-              scalable and immersive web experiences.
+              Crafting meaningful experiences through creativity and technology.
             </p>
 
           </div>

@@ -6,7 +6,7 @@ const education = [
     course: "B.Tech in Computer Science Engineering",
     institute: "G H Raisoni University",
     duration: "2022 - 2026",
-    score: "CGPA 8.9",
+    score: "CGPA 8.98",
   },
   {
     course: "Higher Secondary Certificate (HSC)",
@@ -41,9 +41,7 @@ export default function Education() {
 
           {/* MAIN HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
-            Academic foundation shaped through{" "}
-            <span>consistency</span>, discipline,
-            and continuous technical learning.
+            A journey of learning, <span>evolving through consistency</span>  and new challenges
           </h2>
 
         </div>
@@ -92,7 +90,7 @@ export default function Education() {
                     className={styles.progressFill}
                     style={{
                       width:
-                        item.score === "CGPA 8.9"
+                        item.score === "CGPA 8.98"
                           ? "89%"
                           : item.score === "88.7%"
                             ? "88.7%"

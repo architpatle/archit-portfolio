@@ -29,14 +29,12 @@ export default function Contact() {
           {/* HEADING */}
           <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
             Let’s create something{" "}
-            <span>impactful</span> together.
+            <span>impactful</span> together 
           </h2>
 
           {/* SUBTEXT */}
           <p className={styles.description}>
-            Whether it’s a product idea, frontend collaboration, full-stack development,
-            freelance opportunity, or simply a conversation about
-            design and development - I’m always open to connecting.
+            Whether you have an idea to explore, a project to build, an opportunity to collaborate, or simply want to talk about design and technology, I’m always open to connecting.
           </p>
 
           {/* ACTIONS */}
@@ -82,8 +80,7 @@ export default function Contact() {
 
           {/* FOOTNOTE */}
           <p className={styles.footnote}>
-            Currently available for internships,
-            freelance work, and web development opportunities.
+            Currently open to full-time opportunities, freelance projects, collaborations, and exciting new challenges.f
           </p>
 
         </div>

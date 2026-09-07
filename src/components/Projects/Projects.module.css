@@ -14,9 +14,9 @@
 
   border-radius: 999px;
 
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(12px);
 
@@ -88,27 +88,43 @@
 .iconBox {
   position: absolute;
 
-  top: -26px;
-  left: 28px;
+  top: 20px;
+  left: 20px;
 
-  width: 90px;
-  height: 90px;
+  width: 58px;
+  height: 58px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: var(--accent);
+  background: rgba(11, 11, 18, 0.75);
 
-  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
-  font-size: 2rem;
-  border-radius: 12px;
+  backdrop-filter: blur(12px);
+
+  color: var(--accent);
+
+  font-size: 1.5rem;
+
+  border-radius: 14px;
 
   z-index: 5;
 
   box-shadow:
-    0 10px 40px rgba(99,102,241,0.25);
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.35s ease;
+}
+
+.card:hover .iconBox {
+  transform: translateY(-4px) rotate(-3deg);
+
+  border-color: var(--accent);
+
+  box-shadow:
+    0 12px 35px rgba(99, 102, 241, 0.2);
 }
 
 /* IMAGE */
@@ -123,7 +139,7 @@
 
   overflow: hidden;
 
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .image {
@@ -194,9 +210,9 @@
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-  background: rgba(255,255,255,0.03);
+  background: rgba(255, 255, 255, 0.03);
 
   backdrop-filter: blur(10px);
 
@@ -211,7 +227,7 @@
   color: var(--accent);
 
   box-shadow:
-    0 0 20px rgba(99,102,241,0.25);
+    0 0 20px rgba(99, 102, 241, 0.25);
 }
 
 /* RESPONSIVE */
@@ -234,15 +250,23 @@
   .title {
     font-size: 1.6rem;
   }
-
+s
   .description {
     font-size: 0.95rem;
   }
 
   .iconBox {
-    width: 72px;
-    height: 72px;
-
+    width: 48px;
+    height: 48px;
+    top: 10px;
+    left: 10px;
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width:480px) {
+  .heading{
+    font-size: 28px !important;
+    text-align: left;
   }
 }
