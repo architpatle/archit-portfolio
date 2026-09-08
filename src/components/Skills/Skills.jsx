@@ -1,4 +1,12 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Container from "../common/Container";
 import styles from "./Skills.module.css";
@@ -8,6 +16,8 @@ import {
   FiFigma,
   FiCpu,
 } from "react-icons/fi";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const stack = [
   {
@@ -49,14 +59,94 @@ const stack = [
       "Problem Solving",
     ],
   },
-  
 ];
 
 export default function Skills() {
+  const skillsRef = useRef(null);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(3);
 
-  /* RESPONSIVE SLIDES PER VIEW */
+  /* =========================
+     GSAP SCROLL ANIMATION
+  ========================= */
+
+  useLayoutEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: skillsRef.current,
+          start: "top 75%",
+          toggleActions: "play none none none",
+        },
+        defaults: {
+          ease: "power3.out",
+        },
+      });
+
+      /* EYEBROW */
+
+      tl.from("[data-skills='eyebrow']", {
+        opacity: 0,
+        y: 18,
+        duration: 0.35,
+      });
+
+      /* HEADING */
+
+      tl.from(
+        "[data-skills='heading']",
+        {
+          opacity: 0,
+          y: 25,
+          duration: 0.5,
+        },
+        "-=0.12"
+      );
+
+      /* SKILL CARDS */
+
+      tl.from(
+        "[data-skill-card]",
+        {
+          opacity: 0,
+          y: 35,
+          scale: 0.96,
+          filter: "blur(8px)",
+          duration: 0.65,
+          stagger: 0.14,
+          ease: "power4.out",
+          clearProps: "filter",
+        },
+        "-=0.05"
+      );
+
+      /* DOTS */
+
+      tl.from(
+        "[data-skills='dots']",
+        {
+          opacity: 0,
+          y: 10,
+          duration: 0.3,
+        },
+        "-=0.2"
+      );
+    }, skillsRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  /* =========================
+     RESPONSIVE SLIDES
+  ========================= */
+
   useEffect(() => {
     const updateSlidesPerView = () => {
       if (window.innerWidth <= 768) {
@@ -78,20 +168,24 @@ export default function Skills() {
   }, []);
 
   /* RESET WHEN BREAKPOINT CHANGES */
+
   useEffect(() => {
     setCurrentSlide(0);
   }, [slidesPerView]);
 
-  /* TOTAL POSSIBLE SLIDES */
+  /* TOTAL SLIDE POSITIONS */
+
   const totalSlides = Math.max(
     stack.length - slidesPerView + 1,
     1
   );
 
-  /* CHECK IF CAROUSEL IS NEEDED */
+  /* CHECK IF CAROUSEL IS REQUIRED */
+
   const isCarouselActive = stack.length > slidesPerView;
 
   /* AUTO PLAY */
+
   useEffect(() => {
     if (!isCarouselActive) return;
 
@@ -107,12 +201,14 @@ export default function Skills() {
   }, [isCarouselActive, totalSlides]);
 
   /* DOT NAVIGATION */
+
   const handleDotClick = (index) => {
     setCurrentSlide(index);
   };
 
   return (
     <section
+      ref={skillsRef}
       id="skills"
       className={`relative z-10 py-14 md:py-18 ${styles.skills}`}
     >
@@ -122,13 +218,19 @@ export default function Skills() {
         <div className="text-center max-w-5xl mx-auto lg:mb-24 mb-16">
 
           {/* EYEBROW */}
-          <div className={styles.eyebrow}>
+          <div
+            data-skills="eyebrow"
+            className={styles.eyebrow}
+          >
             <span className={styles.dot}></span>
             Skills
           </div>
 
           {/* HEADING */}
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}>
+          <h2
+            data-skills="heading"
+            className={`text-3xl sm:text-4xl md:text-5xl ${styles.heading}`}
+          >
             Leveraging <span>modern tools</span>
             {" "}to create seamless digital experiences
           </h2>
@@ -146,9 +248,8 @@ export default function Skills() {
             <div
               className={styles.track}
               style={{
-                transform: `translateX(-${
-                  currentSlide * (100 / slidesPerView)
-                }%)`,
+                transform: `translateX(-${currentSlide * (100 / slidesPerView)
+                  }%)`,
               }}
             >
 
@@ -157,35 +258,43 @@ export default function Skills() {
                   key={group.title}
                   className={styles.slide}
                   style={{
-                    width: `${100 / slidesPerView}%`,
+                    "--slides-per-view": slidesPerView,
                   }}
                 >
 
-                  {/* CARD */}
-                  <div className={styles.card}>
+                  {/* ANIMATION WRAPPER */}
+                  <div
+                    className={styles.cardReveal}
+                    data-skill-card
+                  >
 
-                    {/* ICON */}
-                    <div className={styles.iconBox}>
-                      {group.icon}
-                    </div>
+                    {/* CARD */}
+                    <div className={styles.card}>
 
-                    {/* TITLE */}
-                    <h3 className={styles.title}>
-                      {group.title}
-                    </h3>
+                      {/* ICON */}
+                      <div className={styles.iconBox}>
+                        {group.icon}
+                      </div>
 
-                    {/* DESCRIPTION */}
-                    <p className={styles.description}>
-                      {group.description}
-                    </p>
+                      {/* TITLE */}
+                      <h3 className={styles.title}>
+                        {group.title}
+                      </h3>
 
-                    {/* TAGS */}
-                    <div className={styles.tags}>
-                      {group.items.map((item) => (
-                        <span key={item}>
-                          {item}
-                        </span>
-                      ))}
+                      {/* DESCRIPTION */}
+                      <p className={styles.description}>
+                        {group.description}
+                      </p>
+
+                      {/* TAGS */}
+                      <div className={styles.tags}>
+                        {group.items.map((item) => (
+                          <span key={item}>
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+
                     </div>
 
                   </div>
@@ -200,21 +309,25 @@ export default function Skills() {
 
           {/* DOTS */}
           {isCarouselActive && (
-            <div className={styles.dots}>
+            <div
+              className={styles.dots}
+              data-skills="dots"
+            >
 
-              {Array.from({ length: totalSlides }).map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  aria-label={`Go to skills group ${index + 1}`}
-                  className={`${styles.carouselDot} ${
-                    currentSlide === index
-                      ? styles.activeDot
-                      : ""
-                  }`}
-                  onClick={() => handleDotClick(index)}
-                />
-              ))}
+              {Array.from({ length: totalSlides }).map(
+                (_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    aria-label={`Go to skills group ${index + 1}`}
+                    className={`${styles.carouselDot} ${currentSlide === index
+                        ? styles.activeDot
+                        : ""
+                      }`}
+                    onClick={() => handleDotClick(index)}
+                  />
+                )
+              )}
 
             </div>
           )}

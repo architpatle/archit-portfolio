@@ -3,7 +3,9 @@
   background-color: var(--bg);
 }
 
-/* EYEBROW */
+/* =========================
+EYEBROW
+========================= */
 
 .eyebrow {
   display: inline-flex;
@@ -44,8 +46,9 @@
     0 0 20px #6366f1;
 }
 
-
-/* HEADING */
+/* =========================
+HEADING
+========================= */
 
 .heading {
   line-height: 0.95;
@@ -59,15 +62,13 @@
   color: var(--accent);
 }
 
-
 /* =========================
-   CAROUSEL
+CAROUSEL
 ========================= */
 
 .carousel {
   position: relative;
 }
-
 
 /* VIEWPORT */
 
@@ -77,27 +78,40 @@
   overflow: hidden;
 }
 
-
 /* TRACK */
 
 .track {
   display: flex;
-  transition: transform 0.7s ease;
-  padding-top: 10px;
-  will-change: transform;
-}
 
+  will-change: transform;
+
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 /* SLIDE */
 
 .slide {
-  flex-shrink: 0;
+  flex: 0 0 calc(100% / var(--slides-per-view));
 
-  padding: 0 17px;
+  padding: 10px 17px;
+
+  box-sizing: border-box;
 }
 
+/* =========================
+ANIMATION WRAPPER
+========================= */
 
-/* CARD */
+.cardReveal {
+  position: relative;
+
+  width: 100%;
+}
+
+/* =========================
+CARD
+========================= */
 
 .card {
   position: relative;
@@ -105,17 +119,17 @@
   display: flex;
   flex-direction: column;
 
-  /* height: 100%; */
-
-  transition: transform 0.35s ease;
+  transition:
+    transform 0.35s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
 }
 
-
-/* ICON */
+/* =========================
+ICON
+========================= */
 
 .iconBox {
   position: absolute;
@@ -159,8 +173,9 @@
     0 12px 35px rgba(99, 102, 241, 0.2);
 }
 
-
-/* IMAGE */
+/* =========================
+IMAGE
+========================= */
 
 .imageWrapper {
   position: relative;
@@ -189,8 +204,9 @@
   transform: scale(1.06);
 }
 
-
-/* CONTENT */
+/* =========================
+CONTENT
+========================= */
 
 .content {
   padding-top: 28px;
@@ -223,8 +239,9 @@
   color: var(--text-secondary);
 }
 
-
-/* LINK */
+/* =========================
+LINK
+========================= */
 
 .link {
   display: inline-flex;
@@ -271,9 +288,8 @@
     0 0 20px rgba(99, 102, 241, 0.25);
 }
 
-
 /* =========================
-   CAROUSEL DOTS
+CAROUSEL DOTS
 ========================= */
 
 .dots {
@@ -317,9 +333,8 @@
     0 0 15px rgba(99, 102, 241, 0.5);
 }
 
-
 /* =========================
-   RESPONSIVE
+RESPONSIVE
 ========================= */
 
 @media (max-width: 1200px) {
@@ -330,11 +345,15 @@
 
 }
 
-
 @media (max-width: 768px) {
 
+  .viewport {
+    margin: 0 -12px;
+    width: calc(100% + 24px);
+  }
+
   .slide {
-    padding: 0;
+    padding: 0 12px;
   }
 
   .title {
@@ -349,10 +368,13 @@
     width: 48px;
     height: 48px;
 
+
     top: 10px;
     left: 10px;
 
     font-size: 1.5rem;
+
+
   }
 
   .dots {
@@ -361,13 +383,15 @@
 
 }
 
-
 @media (max-width: 480px) {
 
   .heading {
     font-size: 28px !important;
 
+
     text-align: left;
+
+
   }
 
 }
